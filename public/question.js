@@ -1,12 +1,9 @@
-function Question(question, answer1, answer2, choice) {
-  QuizUi.call(this, question, answer1, answer2);
-  this.choice0 = 0;
-  this.choice1 = 0;
+function Question(text, choices, answer) {
+  this.text = text;
+  this.choices = choices;
+  this.answer = answer;
+}
 
-  if (choice === 'choice0') {
-    this.choice0 = 1;
-  }
-  if (choice === 'choice1') {
-    this.choice1 = 1;
-  }
+Question.prototype.isCorrectAnswer = function(choice) {
+  return this.answer === choice;
 }
